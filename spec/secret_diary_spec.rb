@@ -16,8 +16,13 @@ it ' adds an entry in the diary' do
 
 end
 
-it 'raises an error if diary is loked' do
+it 'raises an error if diary is locked' do
   diary = SecretDiary.new
   expect {diary.add_entry('body')}.to raise_error 'Diary locked'
 end
+
+it ' shows an error if the diary is locked ' do
+  diary = SecretDiary.new
+  expect{ diary.get_entries }.to raise_error 'Diary locked'
+  end
 end

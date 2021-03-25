@@ -24,4 +24,11 @@ end
 
     end
   end
+
+  def get_entries
+
+    if @locked == true
+       fail 'Diary locked'
+    end
+  end
 end
